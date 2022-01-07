@@ -1,0 +1,18 @@
+profile:
+  name: ""
+  email: ""
+
+resourceQuota:
+  hard:
+    cpu: "100"
+    memory: 500Gi
+    pods: "50"
+
+limitRanges:
+  - default:
+      cpu: 800m
+      memory: 512Mi
+    defaultRequest:
+      cpu: 500m
+      memory: 256Mi
+    type: Contaner
