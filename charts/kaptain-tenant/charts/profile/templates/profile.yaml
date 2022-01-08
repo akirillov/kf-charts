@@ -1,11 +1,11 @@
 apiVersion: kubeflow.org/v1
 kind: Profile
 metadata:
-  name: {{ .Values.profile.name }}
+  name: {{ .Values.name }}
 spec:
   owner:
     kind: User
-    name: {{ .Values.profile.email }}
+    name: {{ .Values.email }}
   {{- with .Values.resourceQuota }}
   resourceQuotaSpec:
     {{- toYaml . | nindent 4 }}

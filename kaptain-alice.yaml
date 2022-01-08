@@ -1,15 +1,15 @@
 profile:
-  name: ""
-  email: ""
+  name: alice
+  email: user1@d2iq.com
 
-  resourceQuota: {}
-#    hard:
-#      cpu: "100"
-#      memory: 500Gi
-#      pods: "50"
+  resourceQuota:
+    hard:
+      cpu: "100"
+      memory: 500Gi
+      pods: "50"
 
-global:
-  limitRanges: []
+#global:
+#  limitRanges:
 #    - default:
 #        cpu: 800m
 #        memory: 512Mi

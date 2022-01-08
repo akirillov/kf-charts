@@ -1,4 +1,4 @@
-{{- if .Values.limitRanges }}
+{{- if .Values.global.limitRanges }}
 apiVersion: v1
 kind: LimitRange
 metadata:
@@ -6,5 +6,5 @@ metadata:
   namespace: {{ .Values.profile.name }}
 spec:
   limits:
-  {{- .Values.limitRanges | toYaml | nindent 4 }}
+  {{- .Values.global.limitRanges | toYaml | nindent 4 }}
 {{- end }}
