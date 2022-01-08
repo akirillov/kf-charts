@@ -15,3 +15,21 @@ limitRanges:
       cpu: 500m
       memory: 256Mi
     type: Container
+
+secrets:
+  - name: docker-credentials
+    data:
+      config.json: c2FtcGxlIERvY2tlciBjcmVkZW50aWFscyBmaWxlCg==
+    type: Opaque # optional, Opaque by default
+  - name: aws-credentials
+    data:
+      credentials: c2FtcGxlIEFXUyBjcmVkZW50aWFscyBmaWxlCg==
+
+podDefaults:
+  - name: default-aws-docker
+    desc: "AWS and Docker Credentials"
+    secretMounts:
+      - secretName: docker-credentials
+        mountPath: /etc/kubeflow/.docker/
+      - secretName: aws-credentials
+        mountPath: /etc/kubeflow/.aws/

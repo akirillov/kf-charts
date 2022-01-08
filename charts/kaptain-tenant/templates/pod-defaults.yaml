@@ -1,0 +1,24 @@
+{{- range $poddefault := .Values.podDefaults }}
+---
+apiVersion: "kubeflow.org/v1alpha1"
+kind: PodDefault
+metadata:
+  name: {{ $poddefault.name }}
+  namespace: {{ $.Values.name }}
+spec:
+  selector:
+    matchLabels:
+      notebook-configuration: "true"
+  desc: {{ $poddefault.desc }}
+  volumeMounts:
+  {{- range $mount := $poddefault.secretMounts}}
+    - name: {{ $mount.secretName }}
+      mountPath: {{ $mount.mountPath }}
+  {{- end }}
+  volumes:
+  {{- range $mount := $poddefault.secretMounts}}
+    - name: {{ $mount.secretName }}
+      secret:
+        secretName: {{ $mount.secretName }}
+  {{- end }}
+{{- end }}
