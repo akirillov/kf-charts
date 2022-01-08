@@ -1,19 +1,17 @@
-profile:
-  name: alice
-  email: user1@d2iq.com
+name: alice
+email: user1@d2iq.com
 
-  resourceQuota:
-    hard:
-      cpu: "100"
-      memory: 500Gi
-      pods: "50"
+resourceQuota:
+  hard:
+    cpu: "100"
+    memory: 500Gi
+    pods: "50"
 
-#global:
-#  limitRanges:
-#    - default:
-#        cpu: 800m
-#        memory: 512Mi
-#      defaultRequest:
-#        cpu: 500m
-#        memory: 256Mi
-#      type: Contaner
+limitRanges:
+  - default:
+      cpu: 800m
+      memory: 512Mi
+    defaultRequest:
+      cpu: 500m
+      memory: 256Mi
+    type: Container

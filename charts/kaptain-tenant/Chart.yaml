@@ -4,6 +4,3 @@ description: Kaptain Tenant
 type: application
 version: 0.1.0
 appVersion: "1.4.0"
-dependencies:
-  - name: profile
-    version: 0.1.0

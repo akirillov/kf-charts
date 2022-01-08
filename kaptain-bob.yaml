@@ -1,19 +1,17 @@
-profile:
-  name: bob
-  email: user2@d2iq.com
+name: bob
+email: user2@d2iq.com
 
-  resourceQuota:
-    hard:
-      cpu: "50"
-      memory: 250Gi
-      pods: "25"
+resourceQuota:
+  hard:
+    cpu: "50"
+    memory: 250Gi
+    pods: "25"
 
-global:
-  limitRanges:
-    - default:
-        cpu: 800m
-        memory: 512Mi
-      defaultRequest:
-        cpu: 500m
-        memory: 256Mi
-      type: Contaner
+limitRanges:
+  - default:
+      cpu: 800m
+      memory: 512Mi
+    defaultRequest:
+      cpu: 500m
+      memory: 256Mi
+    type: Container

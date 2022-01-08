@@ -1,15 +1,13 @@
-profile:
-  name: ""
-  email: ""
+name: ""
+email: ""
 
-  resourceQuota: {}
+resourceQuota: {}
 #    hard:
 #      cpu: "100"
 #      memory: 500Gi
 #      pods: "50"
 
-global:
-  limitRanges: []
+limitRanges: []
 #    - default:
 #        cpu: 800m
 #        memory: 512Mi

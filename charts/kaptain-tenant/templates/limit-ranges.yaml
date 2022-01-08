@@ -1,10 +1,10 @@
-{{- if .Values.global.limitRanges }}
+{{- if .Values.limitRanges }}
 apiVersion: v1
 kind: LimitRange
 metadata:
   name: cpu-mem-limit-range
-  namespace: {{ .Values.profile.name }}
+  namespace: {{ .Values.name }}
 spec:
   limits:
-  {{- .Values.global.limitRanges | toYaml | nindent 4 }}
+  {{- .Values.limitRanges | toYaml | nindent 4 }}
 {{- end }}
